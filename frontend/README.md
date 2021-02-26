@@ -146,3 +146,108 @@ BudZilla
     7. if existItem update qty
     8. else add item
     9. setCartItems
+
+17. Cart Screen UI
+    1. cartItems = getCartItems()
+    2. create 2 columns for cart items amd cart action
+    3. cartItems.lenght === 0 ? cart is empty 
+    4. show item image, name, quantity and price
+    5. cart actionb
+    6. Subtotal
+    7. Proceed to check out button
+    8. Add CSS style
+
+18. Update and Delete Cart Items
+    1. add qty select next to each item
+    2. after_render()
+    3. add change event to qty select 
+    4. getCartItems() and pass to addToCart()
+    5. set froce to true to addToCart()
+    6. create rerender() as component (component, areaName = 'content')
+    7. component.render and component.after_render
+    8. if force is true then rerender()
+    9. add delete button next to each item
+    10. add click event to qty button
+    11. call removeFromCart(deleteButton.id)
+    12. implemente removeFromCart(id)
+    13. set CartItems( getCartItems().filter)
+    14. if id === parseRequestUrl().id? redirect to '/cart'
+    15. ekse rerender(CartScreen)
+19. Connect to MongoDB and Create Admin User
+    1. npm install mongoose
+    2. connect to mongodb
+    3. create config.js
+    4. npm install dotenv
+    5. export PORT and MONGODB_url
+    6. create models/userModel.js
+    7. create UserSchema and userModel
+    8. create UserRoute
+    9. Create createadmin route
+20. Signin Screen UI
+    1. create SignIn Screen
+    2. render email and password fields
+    3. style sign in form
+
+21. SigninScreen Backend
+    1. create signin api in backend
+    2. create route for /api/users/signin
+    3. create check username and password
+    4. if it is not ok return 401 error
+    5. install express async handler
+    6. wrap in it exoressAsyncHandler
+    7. add error middleware in server.js
+    8. install postman
+    9. send post request
+    10. test with invalid user password
+    11. otherwise generate token
+    12. install jsonwebtoken
+    13. set config.JWT_SECRET to somethingsecret
+    14. add generateToken to utils.js
+    15. return Token
+    16. test with correct user and password 
+22. Signin Screen Action
+    1. after_render handle for submit
+    2. create signin Request in frontend
+    3. show alert if email pr pw incorrect
+    4. add getUserInfo and setUserInfo to localStorage
+    5. create Header Component
+    6. if userInfo.email exist show user name otherwise show signin
+23. Create progress inficator and Alert Component
+    1. create overlay loading div in index.html
+    2. style overlay loading 
+    3. create showLoading() function
+    4. set loading-overlay
+    5. create hideLoadgin() function
+    6. create overlay message div in index.html
+    7. add style overlay message
+    8. create showMessage(message, callback)
+    9. document message-overlay set inner HTML
+    10. div > div id message-overlay-content
+    11. show message
+    12. button id message-overlay-close-button 
+    13. add class active to it 
+    14. add event listener for button to call call back 
+24. Create Header Component
+    1. update index.html
+    2. add header render and after render to router function
+    3. show header menu based on user logged in or not
+25. Register Screen Action 
+    1. after_render handle form aubmit \
+    2. create register request in frontend
+    3. create register api in backend 
+26. Create checkout Wizard Header Component 
+    1. create component
+    2. style component
+27. Shipping Screen
+    1. create shippingScreen.js
+    2. style elements 
+    3. handle form submt 
+28. Payment Screen
+    1. create PaymentScreen.js
+    2. style elements 
+    3. handle form submit
+29. PlaceOrder Screen UI
+    1. create PlaceOrder.js
+    2. style elements
+30. PlaceOrder Screen Action
+    1. handle form submit
